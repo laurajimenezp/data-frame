@@ -4,6 +4,7 @@ public class DataFrame {
     private Variable variables[];
 
     public void loadDataSet(){
+        // TODO: please read a csv file and populate the dataSet matrix. important just values not file headers
 
     }
 
