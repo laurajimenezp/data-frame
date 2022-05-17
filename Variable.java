@@ -1,5 +1,6 @@
 public class Variable {
     private String name;
+    private int column;
 
     public String getName() {
         return name;
@@ -17,7 +18,6 @@ public class Variable {
         this.column = column;
     }
 
-    private int column;
 
     public Variable(String name, int column) {
         this.name = name;
