@@ -25,7 +25,7 @@ public class Main {
 
                 else{System.out.println("Datos mayor que: " ); double value = scanner.nextDouble();}
 
-                filtrar( String operator, int columna);
+                filtrar();
 
 
                 break;
@@ -53,10 +53,13 @@ public class Main {
     public static void filtrar(String operator , int columna){
         if(operator.equals("<")){
             switch(columna){
-                case 1: ;break;
-                case 2: ;break;
-                case 3: ;break;
-                case 4: ;break;
+
+                case 1:  break;
+
+                case 2: break;
+
+                case 3: break;
+                case 4: break;
             }
         }
 
