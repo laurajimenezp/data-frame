@@ -18,4 +18,14 @@ public class MarcoDeDatos {
 
    }
 
+   public Double varianza (int column){
+      double mean = mean(column);
+      double sum = 0.0;
+      int n = this.dataSet[column].length;
+      for (int i = 0; i < n; i++) {
+          sum += (this.dataSet[column][i] - mean) * (this.dataSet[column][i] - mean);
+  }
+      return (sum / (n - 1));
+}
+
 }
