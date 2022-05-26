@@ -1,4 +1,5 @@
 public class Variable {
+    private String station;
     private String name;
     private int column;
 
@@ -14,10 +15,15 @@ public class Variable {
         return column;
     }
 
-    public void setColumn(int column) {
+     public void setColumn(int column) {
         this.column = column;
     }
-
+    public String getStation() {
+        return station;
+    }
+    public void setStation(String station) {
+        this.station = station;
+    }
 
     public Variable(String name, int column) {
         this.name = name;

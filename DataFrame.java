@@ -11,6 +11,26 @@ public class DataFrame {
     public void writeDataSet(String outputFilePath){
 
     }
+    public int getVarColumn(String var){
+        int column = 0;
+        for (int i = 0; i < this.variables.length; i++) {
+            if (this.variables[i].getName().equals(var)){
+                column = this.variables[i].getColumn();
+            }
+        }
+        return column;
+    }
+
+
+    public void filterBy(String variableName, String operator, double value){
+        int column = getVarColumn(variableName);
+
+        switch (operator)
+        {
+            case "<": lessThan(column, value);
+            case ">": greaterThan(column, value);
+        }
+    }
 
     public double [] lessThan(int column, double value){
         int n = this.dataSet[column].length;
@@ -40,14 +60,15 @@ public class DataFrame {
         return values;
     }
 
-    public void filterBy(String variableName, String operator, double value){
+    public void stats(String variableName, String statistic){
         int column = getVarColumn(variableName);
 
-        switch (operator)
+        switch (statistic)
         {
-            case "<": lessThan(column, value);
-            case ">": greaterThan(column, value);
+            case "mean": mean(column);
+            case "st-dev": stDev(column);
         }
+
     }
 
     public Double mean(int column){
@@ -72,25 +93,8 @@ public class DataFrame {
     }
 
 
-    public void stats(String variableName, String statistic){
-        int column = getVarColumn(variableName);
 
-        switch (statistic)
-        {
-            case "mean": mean(column);
-            case "st-dev": stDev(column);
-        }
 
-    }
 
-    public int getVarColumn(String var){
-        int column = 0;
-        for (int i = 0; i < this.variables.length; i++) {
-            if (this.variables[i].getName().equals(var)){
-                column = this.variables[i].getColumn();
-            }
-        }
-        return column;
-    }
 
 }
